@@ -1,0 +1,24 @@
+{
+  "name": "m.a.d",
+  "version": "1.0.0",
+  "description": "Linkedin for music",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desertlp/M.A.D.git"
+  },
+  "author": "Lora Paine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desertlp/M.A.D/issues"
+  },
+  "homepage": "https://github.com/desertlp/M.A.D#readme"
+}
