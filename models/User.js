@@ -17,23 +17,56 @@ const userSchema = mongoose.Schema({
   },
   firstName: {
     type: String,
-    required: [true, 'First name required'],
+    required: false,
   },
   lastName: {
     type: String,
-    required: [true, 'Last name required'],
+    required: false,
   },
-  phone: String, 
-  company: String,
-  position: String,
-  logoUrl: String,
-  reelrUrl: String,
-  bio: String,
-  headshotUrl: String,
-  // videos: ObjectId,
-  // bts: ObjectId,
+  phone: {
+    type: String,
+    required: false,
+  },
+  company: {
+    type: String,
+    required: false,
+  },
+  position: {
+    type: String,
+    required: false,
+  },
+  logoUrl: {
+    type: String,
+    required: false,
+  },
+  reelrUrl: {
+    type: String,
+    required: false,
+  },
+  bio: {
+    type: String,
+    required: false,
+  },
+  headshotUrl: {
+    type: String,
+    required: false,
+  },
+  video: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Video",
+      required: false,
+    },
+  ],
+  bts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "BTS",
+      required: false,
+    },
+  ],
+
 });
 
-const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);

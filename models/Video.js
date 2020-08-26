@@ -14,6 +14,6 @@ const VideoSchema = mongoose.Schema({
     featured: Boolean, //completed: Boolean (max 2 featured)
 });
 
-const Video = mongoose.model('Video', VideoSchema);
 
-module.exports = Video;
+
+module.exports = mongoose.model('Video', VideoSchema);

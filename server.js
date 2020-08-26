@@ -26,8 +26,8 @@ app.use(express.json());
 
 // ------------ ROUTES (API) ------------ //
 
-app.use('/api/v1/videos', routes.videos); 
-app.use('/api/v1/bts', routes.bts);
+app.use('/api/v1/video', routes.video); 
+app.use('/api/v1/bts', routes.bts); 
 app.use('/api/v1/auth', routes.auth); 
 
 // ------------ Connection String ------------ //

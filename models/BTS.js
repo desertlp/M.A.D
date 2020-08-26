@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
 const BTSSchema = mongoose.Schema({
-    descripton: String, // song title
-    photoUrl: String, // link to youtube/vimeo
+    description: {
+        type: String, // song title
+        required: false,
+    },
+    photoUrl: {
+        type: String, // main artist, no feature artists
+        required: true,
+    },
 });
 
-const BTS = mongoose.model('BTS', BTSSchema);
 
-module.exports = BTS;
+
+module.exports = mongoose.model('BTS', BTSSchema);
