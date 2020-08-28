@@ -17,7 +17,14 @@ const show = (req, res) => {
 const create = (req, res) => {
   db.Video.create(req.body, (err, savedVideo) => {
     if (err) console.log(err);
-    res.status(200).json(savedVideo);
+    db.User.findById(req.currentUser.id, (err, foundUser) => {
+      if (err) console.log(err);
+      foundUser.video.push(savedVideo); 
+      foundUser.save((err, savedUser) => {
+        if (err) console.log(err); 
+        res.status(200).json(savedVideo); // moved response into last callback, this is how we mamange time 
+      });
+    });
   });
 };
 
